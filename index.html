@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <html la="ja"></html>
+        <title>4each blog</title>
+        
+        <link rel="stylesheet" href="style.css">
+    
+        <!-- Bootstrap CSS-->
+	    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+	    
+	    <!--fontawsome-->
+	    <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
+	    <link href="fontawesome/css/brands.css" rel="stylesheet">
+	    <link href="fontawesome/css/solid.css" rel="stylesheet">
+	    
+
+    </head>
+    
+    <body>
+        <header>
+           <!--class="container(container-fluid)で囲むと、グリッドシステムclass="row"以外の、<nav>や<footer>タグのものは、左右に15pxの余白が開いてしまう（グリッドシステムのrow）は別）らしい…ので、グリッドシステムのrow以外の時は、class="container"で囲まず、rowのみで囲む。また、そのclass="row"の""の中に、class="row no-gutter"を書く！
+           
+           ※なお、class="container"のタグの中にno-gutterを書いてしまうと、その子要素のグリッドシステムのrowも余白が付いてしまうので、no-gutterを書くのは、あくまで<class="row">やnav,footerの中に書く！
+           
+           gutters＝側溝、溝。"左右"＝側溝の合計が2つになるから、"s"-が付いて複数形になる。->
+           	
+			<!--class="row"、class="col"…Bootstrapのグリッドシステムのこと。
+			
+			余白が無くなるように、no-gutterを書く。（class="container"を作ってその中に書いてしまうと、その子要素にrowを使っていても余白が開いてしまう。）-->
+			<div class="row no-gutters">
+				<div class="col-6 col-md-3 mx-2 my-2">
+					<img src="4eachblog_logo.jpg" class="img-fluid">
+				</div>
+			</div>
+            
+            
+            <!--<nav>タグ。HTML5から追加。-->
+            <!--class="navbar navbar-expand-"で、[d-md-none]と同じことが出来る！
+            [navbar　navbar-expand-md]＝「これはnavbarであるが、サイズがmb以上のの端末の時は、このナビバー（スマホ用のメニューバー）を隠す。」
+            
+            「navbar-色名（dark/light）」「bg(back ground)-色名(dark/light/primary)」…navbar-色名とbg-色名で同じ色名にする
+             →navbar-darkとすると、背景がbg-dark（自動でダークグレーになる）の時、文字の色が自動で灰色になる。-->
+             
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+					<!--<hr>タグ…horizontal rule。水平線-->
+					<!--d-md-none…「mdサイズ以上の画面では非表示にする」。
+					
+					[<nav class="navbar navbar-expand-md>]と[<hr class="d-md-none">]-->
+					<hr class="d-md-none">
+
+					<!--スマホ画面で折り畳み＝collapse式のメニューバーを作りたい時↓
+					ボタンを押して展開させるので、buttonタグを使う！！ボタンタグの中にBootstrapのクラスなどを書いていく。
+					[button class="navbar-toggler"]…「これはナビバーのトグルのボタン、トグラー」。
+
+					[data-toggle="collapse"]…class="navbar-toggler"より、toggleのタイプ？のデータで、そのメニューは開閉されるタイプ＝collapse。
+
+					※[data-]data属性。自分でカスタマイズする。
+
+					[class="navbar-toggler"]と[data-toggle="collapse"]はセット！！
+					-->
+					<button class="navbar-toggler" data-toggle="collapse" data-target="#globalmenu">
+
+						<span class="navbar-toggler-icon"></span>
+
+					</button>
+
+					<!--""buttonを押すと""メニューが展開されるようにするので、idを（は）buttonタグと同じものにする！！
+					※[#]は要らない
+					
+					折りたたまれてるメニューの中身なので、[class="collapse navbar-collapse"]と書く！！
+					-->
+					<div class="collapse navbar-collapse" id="globalmenu">
+						<ul class="navbar-nav">
+
+							<!--ナビバーの中身＝[nav-item]。
+
+							その「nav-item」をクリックしてリンク先に飛ぶので、
+							aタグのclassは、「nav-link」。ナビバーの中に在るリンクなので[nav-link]
+
+							[pr-]…padding right-->
+							<li class="nav-item pr-4"> <a href="#" class="nav-link">トップ</a> </li>
+							<li class="nav-item pr-4"> <a href="#" class="nav-link">プロフィール</a> </li>
+							<li class="nav-item pr-4"> <a href="#" class="nav-link">4eachについて</a> </li>
+							<li class="nav-item pr-4"> <a href="#" class="nav-link">登録フォーム</a> </li>
+							<li class="nav-item pr-4"> <a href="#" class="nav-link">問い合わせ</a> </li>
+							<li class="nav-item pr-4"> <a href="#" class="nav-link">その他</a> </li>
+						</ul>
+					</div>
+           
+            </nav>
+        </header>
+        
+        
+        <main>
+            <!--一番大枠の"囲い"-->
+            <div class="container-fluid">
+            	<!--全体を行＝rowで囲む-->
+            	<div class="row">
+            	
+            		<!--<body>の<main>の内、左側のパーツであることを、rowとcol-、col-md-で設定-->
+            		
+            		<!--一番大枠のcol=列の内、スマホではグリッド12個分、タブレット画面以上では8個分。-->
+            		<div class="col-12 col-md-8">
+            			<div class="row">
+            			
+            				<!--全体の大枠の内、グリッド8個分の列の中のグリッド（bodyのmainのうち、左側のカラム=columnの分）の内、スマホで12個分使う。タブレットで-->
+							<div class="col-12"> <!-- ←スマホの縦サイズの時の表記-->
+								<h2 id="title_main">プログラミングに役立つ書籍</h2>
+
+								<div class="clock"><i class="fas fa-clock"></i></div>	<!--←fontawsomeを使って時計アイコンを使いたい時の記述！！-->
+								<div class="mt-3">2017年1月15日</div>
+
+
+								<!--カルーセル=メリーゴーラウンド。画像が切り替わっていくやつの作成。スライドショーを表示する領域をdivで定義して、
+								data-ride="calousel"でdata属性を宣下し、bootstrapのクラス？のclass="carousel silde"(横スライド)を宣言する。また、carousel-indecatorで使うので、id="任意のid"も決める。
+								data-rideにより、画像を読み込んだ瞬間にスライドが始まる。
+
+
+								また、その中で、どのように表示・画像が切り替わるかcarousel-indecatorで指定。表示する画像の数の分だけリスト形式で作成する。※ここに画像を挿入するのではない。あくまでindecatorは画像の移り変わり方や初期の画像を決める奴
+								listタグで、data-target="#[カルーセルの宣言の所で決めたid]"を書く。
+								data-slide-to="" で番号を振っていく。割り当てる番号は0から。
+								class="active"をliタグに入れることで、「現在選択している」=初めの段階に出る写真ということを指定できる。その後はdata-slide-to="数字"で移り変わらせられる？
+
+
+								「カルーセルの中身」=スライドショーで表示する画像の領域=写真をclass="carousel-inner"で設定-->
+
+								<div class="carousel slide" id="slider" data-ride="carousel">
+
+								<!--カルーセルを作る時は、カルーセルの塊=一番上の親要素のidと、その子要素olの中身のlistタグのdata-target="#〇〇"は同じものにする！！
+								[これがdata-ride="carousel"の中身のリスト]-->
+									<ol class="carousel-indicators">
+										<li data-target="#slider" data-slide-to="0" class="active"></li>
+										<li data-target="#slider" data-slide-to="1"></li>
+										<li data-target="#slider" data-slide-to="2"></li>
+									</ol>
+
+								<!-- class="active"を指定することで、「現在選択している」=ここから始まるということになる。carousel-indicatorとcarousel-innerで、activeで一致した所から始まる？
+								それぞれの画像をdivでブロックにし、active指定したいものにはactiveを入れる。
+								dispray-数字…h1タグ以上の特大表示-->
+									<div class="carousel-inner">
+
+										<div class="carousel-item active">
+
+											<a href="#">
+												<!--mt=margin top、mb=margin bottom-->
+												<img src="bookstore.jpg" class="img-fluid mt-3 mb-3">
+												<div class="carousel-caption">
+													<div class="display-4 pb-5">Brodens your horizon</div>
+													<p>プログラミングで可能性を広げよう</p>
+												</div>
+											</a>
+										</div>
+
+
+										<div class="carousel-item">
+											<!--カルーセルでぐるぐる動いてる画像をクリックしたら別ページに飛んでほしいので、aタグで囲んでいる。-->
+											<a href="#">
+												<img src="tokyo.jpg" class="img-fluid mt-3 mb-3">
+
+												<!--<div class="carousel-caption"></div>で囲むことにより、囲んだものを画像の上に表示できる。
+												「キャプション」=見出し、タイトル、説明文-->
+												<div class="carousel-caption">
+													<div class="display-4 pb-5">Work hard play hard</div>
+													<p>全力で働き　全力で遊ぶ</p>
+												</div>
+											</a>
+										</div>
+
+										<div class="carousel-item">
+											<a href="#">
+												<img src="office.jpg" class="img-fluid mt-3 mb-3">
+												<div class="carousel-caption">
+													<div class="display-4 pb-5">Creativive office</div>
+													<p>クリエイティブな環境と生産性</p>
+												</div>
+											</a>
+										</div>
+									</div>
+
+
+									<!--.carousel-control-{prev|next}, .carousel-control-{prev|next}-icon は、左右の矢印アイコンを押すことでスライドする、コントローラ付きのカルーセルを表示する。
+
+									hrefは、一番上の親要素、class="carousel slide" data-ride="carousel" id="slider"で決めた、スライドショー領域のidと同じ！！-->
+
+									<a href="#slider" class="carousel-control-prev" data-slide="prev">
+										<span class="carousel-control-prev-icon"></span>
+									</a>
+
+									<a href="#slider" class="carousel-control-next" data-slide="next">
+										<span class="carousel-control-next-icon"></span>
+									</a>
+								</div>
+
+								<p>4eachはインターノウスが提供するオンラインでプログラミングが勉強できるeラーニングシステムです。</p>
+								<p> 記事中身</p>
+							</div>
+						</div>
+				
+
+						<div class="row gray_box"> <!-- ←[gray_box]は、背景色を灰色にしたいので作った、自作のclass-->
+
+							<!--全体＝親要素のグリッドの内8個分グリッドを使った子要素の、更に子要素（一番大枠の孫要素）の中のグリッドの内、
+							スマホではグリッド6個分、
+							タブレットではグリッド3個分＝col3個分を使い表示。-->
+							<div class="col-6 col-md-3"> <!--col=スマホの縦/col-md-=タブレットの縦でどう表示するかのグリッド数-->
+								<img src="pic1.jpg" alt="ドメインの取得方法" class="img-fluid py-3"> <!-- ←写真の方にpaddingしておかないと、文字がめり込んでくるから。-->
+								<p class="text-center photo"> <a href="#">ドメインの取得方法</a> </p> <!-- ←[photo]テキストのリンクの装飾用に作った自作のclass-->
+							</div>
+
+							<div class="col-6 col-md-3"> 
+								<img src="pic2.jpg" alt="快適な職場環境" class="img-fluid py-3">
+								<p class="text-center photo"> <a href="#">快適な職場環境</a> </p>
+							</div>
+
+							<div class="col-6 col-md-3">
+								<img src="pic3.jpg" alt="Linuxの基礎" class="img-fluid py-3">
+								<p class="text-center photo"> <a href="#">Linuxの基礎</a></p>
+							</div>
+
+							<div class="col-6 col-md-3">
+								<img src="pic4.jpg" alt="マーケティング入門" class="img-fluid py-3">
+								<p class="text-center photo"> <a href="#">マーケティング入門</a></p>
+							</div>
+
+							<div class="col-6 col-md-3">
+								<img src="pic5.jpg" alt="アクティブラーニング" class="img-fluid py-3">
+								<p class="text-center photo"> <a href="#">アクティブラーニング</a></p>
+							</div>
+
+							<div class="col-6 col-md-3">
+								<img src="pic6.jpg" alt="CSSの効率的な勉強方法" class="img-fluid py-3">
+								<p class="text-center photo"> <a href="#">CSSの効率的な勉強方法</a></p>
+							</div>
+
+							<div class="col-6 col-md-3">
+								<img src="pic7.jpg" alt="リーダブルコードとは" class="img-fluid py-3">
+								<p class="text-center photo"> <a href="#">リーダブルコードとは</a></p>
+							</div>
+
+							<div class="col-6 col-md-3">
+								<img src="pic8.jpg" alt="HTML5の可能性" class="img-fluid py-3">
+								<p class="text-center photo"> <a href="#">HTML5の可能性</a></p>
+							</div>
+						</div>
+					</div>
+           
+            		<!--<body>の<main>の内、右側の部分。スマホは画面が小さいので、一番大枠のcontainerの子要素のcol。-->
+					<div class="col-12 col-md-4">
+						<h3 class="title_sidebar pc">人気の記事</h3>
+
+						<nav class="navbar navbar-expand-md navbar_color navbar-light px-0 py-1">
+
+							<!--
+							スマホ画面でナビバーを、クリックするとメニューがずらっと出てくるハンガーメニューにしたい時は、まず<button>タグを使う！
+
+							toggule=トグル。オンオフを切り替えるスイッチの事。PC本体でいえば、Caps Lockキーとか。
+							留め釘、ダッフルコートの棒状のボタン（皮の輪っかに角や木で作られた留め具を通すタイプのコート）という意味もある。
+							トグルは、メニューバーをクリックして表示させるためのもの。「三」模様があるボタン。
+
+							collapse=折りたたむ、潰す。
+
+							折り畳み式のメニューバー（ハンガーメニュー）は、class="navbar-toggler"（トグルを扱う・使うボタン）とdata-toggle="collapse"「折り畳み式のもの」は必ずセット！！[data-toggle="collapse"]は必ず書く！
+
+							data-target＝折りたたんだメニューのIDかクラスを指定するもの。
+							buttonタグのdata-targetは、「div class="collapse navbar-collapse」のid=""と同じものにする！
+
+							リンク要素にdata-toggleとdata-targetの2つのカスタムデータ属性があることに注目してください。「toggle」は「なにをするか」を、「target」は「どの要素を開くか」をBootstrapに伝えます
+							-->
+							<button class="navbar-toggler sp w-100" data-toggle="collapse" data-target="#menu1">
+
+								<span class="text-black font-weight-bold height:300px;">人気の記事</span><span class="float-right">+</span>
+							</button>
+
+							<!--「div class="collapse navbar-collapse」のidは、「button class=""navbar-toggler data -target="#    "」のdata-targetと同じにする！
+
+							button data-toggle="collapse"の中身なので、？その中身をdiv class="collapse navbar-collapse"で囲う！-->
+							<div class="collapse navbar-collapse margin" id="menu1">
+								<ul>
+									<li class="sidebar_li"><a href="#" class="nav-link">PHPオススメ本</a></li>
+									<li class="sidebar_li"><a href="#" class="nav-link">PHP MyAdminの使い方</a></li>
+									<li class="sidebar_li"><a href="#" class="nav-link">今人気のエディタTop5</a></li>
+									<li class="sidebar_li"><a href="#" class="nav-link">HTMLの基礎</a></li>
+								</ul>
+							</div>
+
+						</nav>
+
+
+						<h3 class="title_sidebar pc">オススメリンク</h3>
+
+						<nav class="navbar navbar-expand-md navbar_color navbar-light px-0 py-1">
+
+							<button class="navbar-toggler sp w-100" data-toggle="collapse" data-target="#menu2">
+
+								<!--SPANタグの中に文字列を書くことで、折り畳み式＝collapseのメニューバーの上に、ボタンの名前が表示される-->
+								<span class="text-black font-weight-bold height:300px;">オススメリンク</span><span class="float-right">+</span>
+
+							</button>
+
+							<!--上のdivタグののdata-target=""で決めたidと同じidを書く！
+							「これはtogglerなナビバーで、そのdata-toggleはcollapse=折り畳み式で、data-target="#〇〇"」の○○と同じ名前のidの物が、そのメニューバーになる」-->
+							<div class="collapse navbar-collapse margin" id="menu2">
+								<ul>
+									<li class="sidebar_li"><a href="#" class="nav-link">インターノウス株式会社</a></li>
+									<li class="sidebar_li"><a href="#" class="nav-link">XAMPPのダウンロード</a></li>
+									<li class="sidebar_li"><a href="#" class="nav-link">Eclipseのダウンロード</a></li>
+									<li class="sidebar_li"><a href="#" class="nav-link">Bracketsのダウンロード</a></li>
+								</ul>
+							</div>
+						</nav>
+
+
+						<h3 class="title_sidebar pc">カテゴリ</h3>
+							<nav class="navbar navbar-expand-md navbar_color navbar-light px-0 py-1">
+
+								<button class="navbar-toggler sp w-100" data-toggle="collapse" data-target="#menu3">
+
+									<!--ボタンの名前をspanタグで表記する-->
+									<span class="text-black font-weight-bold height:300px;">カテゴリ</span><span class="float-right">+</span>
+								</button>
+
+								<!--buttonタグの所で決めたidを書くことで、「これはそのidのボタンを押すことで展開される、collapse型のメニュー（の中身）」であることを認識させることが出来る。-->
+								<div class="collapse navbar-collapse margin" id="menu3">
+									<ul>
+										<li class="sidebar_li"><a href="#" class="nav-link">HTML</a></li>
+										<li class="sidebar_li"><a href="#" class="nav-link">PHP</a></li>
+										<li class="sidebar_li"><a href="#" class="nav-link">MySQL</a></li>
+										<li class="sidebar_li"><a href="#" class="nav-link">JavaScript</a></li>
+									</ul>
+								</div>
+							</nav>
+						
+						</div>
+					
+					</div>
+				</div>
+			</main>
+       
+			<footer class="bg-dark text-secondary">
+				copyright © internous | 4each blog the which provides A to Z about programming.
+			</footer>
+
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        <!--tempフォルダのbootstrapフォルダのjsフォルダにある、javascriptのファイルへリンク。「.」は「現在のフォルダと同じ階層」のこと。なお、「..」は「一つ上の階層」。「../..」は「2つ上の階層（多分）」。-->
+        <script src="./bootstrap.js.bootstrap.min.js" type="text/javascript"></script>
+    </body>
+</html>
