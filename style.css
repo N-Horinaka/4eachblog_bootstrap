@@ -1,12 +1,9 @@
-
-
-/*fontawsomeのアイコンの色を変更*/
+/*時計アイコン*/
 .clock {
 	color: orange;
 	float: left;
 	padding: 7px 10px 0px 5px;
 }
-
 
 #title_main {
 	border-left: solid black 4px;
@@ -23,7 +20,6 @@
 	background-color: lightgray;
 }
 
-
 .gray_box .photo {
 	margin-top: -5px;
 }
@@ -39,7 +35,6 @@
 .gray_box .photo a:hover {
 	color: #ff0000;
 }
-
 
 
 .title_sidebar {
@@ -68,11 +63,6 @@
 }
 
 
-
-/* PC表示"pc"のclassがついた画像が表示される */
-/*
-「！important」指示
-=スタイル適用の優先順位を上げることができる宣言なんだ。例えば通常CSSでは後から書いたものほど優先されるけど、これを使った部分は記述場所に関係なく優先される*/
 .pc {
 	display: block !important;
 }
@@ -86,8 +76,6 @@
 }
 
 
-
-/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
 @media only screen and (max-width: 768px) {
 	.pc {
 		display: none !important;
@@ -107,10 +95,6 @@
 }
 
 
-
-
-
-
 footer {
 	background-color: black;
 	text-align: center;
@@ -118,131 +102,3 @@ footer {
 	line-height: 60px;
 	margin-top: 30px;
 }
-
-
-
-
-
-
-
-
-
-/*元々のCSS
-
-
-body{
-    font-family:sans-serif;
-    font-size:15px;
-}
-
-img.logo{
-    width:455px;
-}
-
-.top-menu{
-    float:left;
-    width:100%;
-    height:50px;
-    line-height:50px;
-    background-color: black;
-}
-
-.top-menu li{
-    list-style:none;
-    float:left;
-    padding-left:50px;
-    color:white;
-}
-
-main{
-    clear:left;
-}
-
-.main{
-    float:left;
-    width:880px;
-}
-
-
-#page-title{
-    font-size:30px;
-    padding-left:3px;
-    margin-left:10px;
-    border-left: 5px solid black;
-    border-bottom:1px solid black; 
-}
-
-.explain .date{
-    margin-top:-3px;
-    margin-left:20px;
-}
-
-img.bookstore{
-    width:880px;
-}
-
-.article{
-    margin-bottom:40px;
-}
-
-.contents{
-    text-align: center;
-    background-color:lightgray;
-    width:880px;
-}
-
-.contents-picture{
-    display:inline-block;
-}
-
-.contents-1 .contents-picture img{
-    width:200px;
-    margin:30px 5px -12px 5px;
-}
-
-.contents-2 .contents-picture img{
-    width:200px;
-    margin:-5px 5px -12px 5px;
-}
-
-
-
-.side{
-    float:left;
-    width:320px;
-    margin-top:13px;
-    margin-left:40px;
-    margin-right:0px;
-}
-
-aside h2{
-    font-size:22px;
-    border-bottom: 1px dashed black;
-}
-
-aside ul{
-    list-style:none;
-    margin-top:10px; 
-    margin-bottom:15px;
-    margin-left:-20px;
-}
-
-aside li{
-    padding-bottom:12px;
-}
-
-　↓前の要素・塊（<footer>の前は<main>）でfloat:left;を使った時は、必ず（そこで使わないなら？）clear:left;する
-
-footer{
-    text-align:center; 
-    font-size:13px;
-    clear:left;
-    width:100%;
-    height:42px;
-    line-height:42px;
-    background-color: black;
-    color:white;
-}
-
-
-*/
